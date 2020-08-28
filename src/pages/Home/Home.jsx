@@ -29,7 +29,7 @@ export class Home extends Component {
                 <div className="container" style={{ padding: '0' }}>
                     <div className="row">
                         <div className="col-sm-12 col-md-4 col">
-                            <div className="card card1">
+                            <div className="card card1 mx-auto">
                                 
                                 <div className="card-body">
                                     <h5 className="card-title">Card title</h5>
@@ -38,7 +38,7 @@ export class Home extends Component {
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-4 col">
-                        <div className="card card1"> 
+                        <div className="card card1 mx-auto"> 
                                 <div className="card-body">
                                     <h5 className="card-title">Card title</h5>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -46,7 +46,7 @@ export class Home extends Component {
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-4 col">
-                        <div className="card card1">
+                        <div className="card card1 mx-auto">
                                 
                                 <div className="card-body">
                                     <h5 className="card-title">Card title</h5>
@@ -68,19 +68,20 @@ export class Home extends Component {
                     <br />
                     <div className="row">
                         <div className="col-lg-3 col-md-4 col-sm-6">
-                            <img src={topic1} alt=""/>
-                            <div className="text-top">
-                                <h6>Gaming</h6>
-                            </div>
+                            <img src={topic1} className="imgtopic" alt=""/>
+                            <h5 className="subtopic">Music</h5>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6">
-                            <img src={topic2} alt=""/>
+                            <img src={topic2} className="imgtopic" alt=""/>
+                            <h5 className="subtopic">Dance</h5>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6">
-                            <img src={topic3} alt=""/>
+                            <img src={topic3} className="imgtopic" alt=""/>
+                            <h5 className="subtopic">Programing</h5>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6">
-                            <img src={topic4} alt=""/>
+                            <img src={topic4} className="imgtopic" alt=""/>
+                            <h5 className="subtopic">Gamming</h5>
                         </div>
                         
                     </div>

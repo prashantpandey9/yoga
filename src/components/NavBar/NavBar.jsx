@@ -26,6 +26,7 @@ export class NavBar extends Component {
                     </NavDropdown>
                     <Nav.Link href="/aboutus">Blog</Nav.Link>
                     <Nav.Link href="/aboutus">Contact Us</Nav.Link>
+                    <Nav.Link href="/aboutus">Our Mission</Nav.Link>
                     </Nav>
                     <Nav.Link href="#deets"><Button variant="warning">Register</Button></Nav.Link>
                     
