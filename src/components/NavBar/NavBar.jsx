@@ -35,7 +35,7 @@ export class NavBar extends Component {
                         <NavDropdown.Item ><Link to='aboutus'>Senior</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to='aboutus'>Others</Link></NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link><Link to='aboutus'>Blog</Link></Nav.Link>
+                    <Nav.Link><Link to='blog'>Blog</Link></Nav.Link>
                     <Nav.Link><Link to='contactus'>Contact Us</Link></Nav.Link>
                     <Nav.Link><Link to='mission'>Our Mission</Link></Nav.Link>
                     </Nav>

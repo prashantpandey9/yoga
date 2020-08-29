@@ -9,6 +9,7 @@ export class Footer extends Component {
                     <div className="container">
                         <div className="row just">
                             <div className="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+                                <h1>Recreatly</h1>
                                 <h5>Take the next step toward your personal and professional goals with us.</h5>
                                 <a href="prashantpandey.ml"><i class="fa fa-twitter"></i></a>
                                 <a href="prashantpandey.ml"><i class="fa fa-linkedin"></i></a>

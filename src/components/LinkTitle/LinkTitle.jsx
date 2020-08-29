@@ -9,7 +9,7 @@ function LinkTitle(props) {
             <div className="row linktitle">
                 <div className="col-md-12 col-sm-12 col-lg-12">
                     <h1 className="linkhead">{ props.data}</h1>
-                        <Link to='/'>Home</Link> | <Link to={props.linkto}>{props.link}</Link>
+                        <Link to='/'>Home</Link> | <Link to={props.linkto}>{props.data}</Link>
                 </div>
             </div>
         </div>

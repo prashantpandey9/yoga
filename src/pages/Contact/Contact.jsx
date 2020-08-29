@@ -7,7 +7,7 @@ export class Contact extends Component {
         return (
             <div>
                 <NavBar />
-                <LinkTitle data='Contact Us' link='Contact Us' linkto='contactus'/>
+                <LinkTitle data='Contact Us' linkto='contactus'/>
                 <Footer />
             </div>
         )

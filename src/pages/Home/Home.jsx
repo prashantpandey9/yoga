@@ -28,7 +28,7 @@ export class Home extends Component {
                     <br />
 
                     <h1 className="heading2">
-                    Explore top subjects
+                    Explore Our Top Subjects
                     </h1>
                     <br />
                     <Subjects />
