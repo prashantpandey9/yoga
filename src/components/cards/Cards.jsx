@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {CardDeck, Card} from 'react-bootstrap';
 import './Cards.scss'
-import Dance from '../../assets/dance.jpg';
-import Drawing from '../../assets/drawing.jpg'
-import Music from '../../assets/music.jpg'
+import Dance from '../../assets/images/dance.jpg';
+import Drawing from '../../assets/images/drawing.jpg'
+import Music from '../../assets/images/music.jpg'
 export class Cards extends Component {
     render() {
         return (

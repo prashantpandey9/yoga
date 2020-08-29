@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Footer.scss'
+import { Link } from 'react-router-dom'
 export class Footer extends Component {
     render() {
         return (
@@ -9,15 +10,18 @@ export class Footer extends Component {
                         <div className="row just">
                             <div className="col-xl-4 col-lg-5 col-md-4 col-sm-6">
                                 <h5>Take the next step toward your personal and professional goals with us.</h5>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="prashantpandey.ml"><i class="fa fa-twitter"></i></a>
+                                <a href="prashantpandey.ml"><i class="fa fa-linkedin"></i></a>
+                                <a href="prashantpandey.ml"><i class="fa fa-github"></i></a>
                             </div>
                             <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                                 <h5>Useful Links</h5>
                                 <ul>
                                     <li>
-                                        <a href="aboutus">AboutUs</a>
+                                        <Link to='/'>Home</Link>
+                                    </li>
+                                    <li>
+                                        <Link to='aboutus'>About Us</Link>
                                     </li>
                                 </ul>
                             </div>

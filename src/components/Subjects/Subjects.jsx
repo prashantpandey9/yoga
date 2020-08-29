@@ -1,8 +1,8 @@
 import React from 'react'
-import topic1 from '../../assets/topic1.png'
-import topic2 from '../../assets/topic2.png'
-import topic3 from '../../assets/topic3.png'
-import topic4 from '../../assets/topic4.png'
+import topic1 from '../../assets/images/topic1.png'
+import topic2 from '../../assets/images/topic2.png'
+import topic3 from '../../assets/images/topic3.png'
+import topic4 from '../../assets/images/topic4.png'
 
 export default function Subjects() {
     return (

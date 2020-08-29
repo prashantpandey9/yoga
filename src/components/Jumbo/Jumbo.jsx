@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, Row, Col }from 'react-bootstrap'
-import car from '../../assets/faceshield.png'
+import car from '../../assets/images/faceshield.png'
 
 const Jumbo = () => {
    return (

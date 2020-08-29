@@ -25,12 +25,21 @@ export class NavBar extends Component {
                         <NavDropdown.Item >Games</NavDropdown.Item>
                         <NavDropdown.Item >Senior</NavDropdown.Item>
                         <NavDropdown.Item >Others</NavDropdown.Item>
+                        <NavDropdown.Item><Link to='aboutus'>Music</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Dance</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Blog</Link>Something</NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Language</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Drawing & Painting</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Sports</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Games</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Senior</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to='aboutus'>Others</Link></NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link><Link to='aboutus'>Blog</Link></Nav.Link>
-                    <Nav.Link><Link to='aboutus'>Contact Us</Link></Nav.Link>
-                    <Nav.Link><Link to='aboutus'>Our Mission</Link></Nav.Link>
+                    <Nav.Link><Link to='contactus'>Contact Us</Link></Nav.Link>
+                    <Nav.Link><Link to='mission'>Our Mission</Link></Nav.Link>
                     </Nav>
-                    <Nav.Link><Link to='aboutus'><Button variant="warning">Register</Button></Link></Nav.Link>
+                    <Nav.Link><Link to='register'><Button variant="warning">Register</Button></Link></Nav.Link>
                     
                 </Navbar.Collapse>
                 </Navbar>

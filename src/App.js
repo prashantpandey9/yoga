@@ -9,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 
 import Home  from './pages/Home/Home';
 import Aboutus from './pages/AboutUs/Aboutus';
-
+import Contact from './pages/Contact/Contact'
 function App() {
   return (
     <div className="App">
@@ -19,6 +19,7 @@ function App() {
           
           <Route exact path='/' component={Home} />
           <Route exact path='/aboutus' component={Aboutus} />
+          <Route exact path='/contactus' component={Contact} />
           
       </Switch>
   </BrowserRouter>

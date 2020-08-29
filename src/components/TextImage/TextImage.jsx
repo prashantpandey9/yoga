@@ -1,5 +1,5 @@
 import React from 'react'
-import topic1 from '../../assets/topic1.png'
+import topic1 from '../../assets/images/topic1.png'
 export default function TextImage() {
     return (
         <div>
