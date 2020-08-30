@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/yoga/static/css/main.5d9ab5de.chunk.css",
-    "main.js": "/yoga/static/js/main.023f498d.chunk.js",
-    "main.js.map": "/yoga/static/js/main.023f498d.chunk.js.map",
+    "main.js": "/yoga/static/js/main.edd36c1d.chunk.js",
+    "main.js.map": "/yoga/static/js/main.edd36c1d.chunk.js.map",
     "runtime-main.js": "/yoga/static/js/runtime-main.066aa944.js",
     "runtime-main.js.map": "/yoga/static/js/runtime-main.066aa944.js.map",
     "static/css/2.f3cffc9e.chunk.css": "/yoga/static/css/2.f3cffc9e.chunk.css",
     "static/js/2.32df36a3.chunk.js": "/yoga/static/js/2.32df36a3.chunk.js",
     "static/js/2.32df36a3.chunk.js.map": "/yoga/static/js/2.32df36a3.chunk.js.map",
     "index.html": "/yoga/index.html",
-    "precache-manifest.4a35fe705974ce48fd66f4486bc0ea7f.js": "/yoga/precache-manifest.4a35fe705974ce48fd66f4486bc0ea7f.js",
+    "precache-manifest.8bc40dad7306ac5f6580240a9db8006e.js": "/yoga/precache-manifest.8bc40dad7306ac5f6580240a9db8006e.js",
     "service-worker.js": "/yoga/service-worker.js",
     "static/css/2.f3cffc9e.chunk.css.map": "/yoga/static/css/2.f3cffc9e.chunk.css.map",
     "static/css/main.5d9ab5de.chunk.css.map": "/yoga/static/css/main.5d9ab5de.chunk.css.map",
@@ -28,6 +28,6 @@
     "static/css/2.f3cffc9e.chunk.css",
     "static/js/2.32df36a3.chunk.js",
     "static/css/main.5d9ab5de.chunk.css",
-    "static/js/main.023f498d.chunk.js"
+    "static/js/main.edd36c1d.chunk.js"
   ]
 }
