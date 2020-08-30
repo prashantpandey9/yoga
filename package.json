@@ -1,6 +1,6 @@
 {
-  "homepage": "https://prashantpandey9.github.io/aboutus",
-  "name": "yoga",
+  "homepage": "https://prashantpandey9.github.io/blog",
+  "name": "blog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
