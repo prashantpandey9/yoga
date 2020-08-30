@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
 import Cards from '../../components/cards/Cards'
-import Topcards from '../../components/Topcards/Topcards'
+
 import Subjects from '../../components/Subjects/Subjects'
 import TextImage from '../../components/TextImage/TextImage'
 import Category from '../../components/Category/Category'
