@@ -1,7 +1,9 @@
+@import '../../../public/css/colors';
+
 .linktitle{
-    background-image: linear-gradient(#6274ff,#b956ff);
+    background-image: $theme;
     padding: 80px;
-    color: #fff;
+    color: $head;
 }
 .linkhead{
     font-size: 3.5rem!important;

@@ -1,49 +1,31 @@
 import React from 'react'
 
-const data = [
-    {
-      title: "First Title",
-      text: "First Text",
-     
-    },
-    {
-      title: "second Title",
-      text: "second Text",
-      
-    },
-    {
-      title: "third Title",
-      text: "third Text",
-      
-    }
-  ];
-function App() {
-    return data.map((i, index) => <CardView key={index} {...{ i }} />);
-  }
-
-const CardView = ({
-    title = "Default Title",
-    text = "Default Text",
-  }) => (
-    <div className="col-sm-12 col-md-4 col-lg-4">
-    <div className="card card1 mx-auto">
-        <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{text}</p>
-        </div>
-    </div>
-</div>
-);
-
-  
+import './Topcards.scss';
 
 
-
-const Topcards = () =>{
-    return(
+function Topcards() {
+    return (
         <div className="container" style={{ padding: '0' }}>
             <div className="row">
-                <App />
+                
+                        <div className="col-sm-12 col-md-12 col-lg-12">
+                            <div className="card card1 mx-auto">
+                                
+                                <div className="card-body">
+                                    <h5 className="card-title" for="cars">Select Your service</h5>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Select your
+                                        </button>
+                                        <div class="dropdown-menu search" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item searchitem" href="#">Action</a>
+                                            <a class="dropdown-item searchitem" href="#">Another action</a>
+                                            <a class="dropdown-item searchitem" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             </div>
         </div>
     )

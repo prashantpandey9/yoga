@@ -1,5 +1,8 @@
+@import '../../../public/css/colors';
+
 .card2{
-    padding: 0 5px 0 5px;
-    border-color: #fff;
+    // padding: 0 5px 0 5px;
+    border-color: $head;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px;
 }

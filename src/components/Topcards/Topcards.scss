@@ -1,0 +1,22 @@
+@import '../../../public/css/colors';
+
+.card1{
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 20px;
+    border-color: $head;
+    transition: 0.8s;
+   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.dropdown{
+    
+    .search{
+        background: $head;
+        
+        .searchitem{
+            color: $card;
+        }
+    }
+}

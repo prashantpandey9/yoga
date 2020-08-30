@@ -1,48 +1,52 @@
 import React, { Component } from 'react';
-import {CardDeck, Card} from 'react-bootstrap';
+import {CardDeck, Card, Button} from 'react-bootstrap';
 import './Cards.scss'
 import Dance from '../../assets/images/dance.jpg';
 import Drawing from '../../assets/images/drawing.jpg'
 import Music from '../../assets/images/music.jpg'
+
+
+const detail = [
+    {
+        img : Dance,
+        title : "Card Title",
+        detail : "This is a wider carbit longer." 
+    },
+    {
+        img : Music,
+        title : "Card Title",
+        detail : "This is a wider carbit longer." 
+    },
+    {
+        img : Drawing,
+        title : "Card Title",
+        detail : "This is a wider carbit longer." 
+    }
+]
+
+const cards = detail.map(i => (
+        <Card className="card2">
+            <Card.Img variant="top" src={i.img} />
+                <Card.Body>
+                    <Card.Title> {i.title}</Card.Title>
+                    <Card.Text>
+                        {i.detail}
+                    </Card.Text>
+                    <Button variant="primary">{i.title} </Button>
+                </Card.Body>
+                        
+        </Card>
+    ));
+    
 export class Cards extends Component {
+    
     render() {
         return (
             <div>
                 <CardDeck>
-                    <Card className="card2">
-                        <Card.Img variant="top" src={Dance} />
-                        <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                        </Card.Body>
-                        
-                    </Card>
-                    <Card className="card2">
-                        <Card.Img variant="top" src={Music} />
-                        <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This card has supporting text below as a natural lead-in to additional
-                            content.{' '}
-                        </Card.Text>
-                        </Card.Body>
-                        
-                    </Card>
-                    <Card className="card2" >
-                        <Card.Img variant="top" src={Drawing} />
-                        <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
-                        </Card.Text>
-                        </Card.Body>
-                        
-                    </Card>
+
+                    { cards }
+
                 </CardDeck>
             </div>
         )

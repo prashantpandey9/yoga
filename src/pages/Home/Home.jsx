@@ -5,6 +5,7 @@ import Cards from '../../components/cards/Cards'
 import Topcards from '../../components/Topcards/Topcards'
 import Subjects from '../../components/Subjects/Subjects'
 import TextImage from '../../components/TextImage/TextImage'
+import Category from '../../components/Category/Category'
 import './Home.scss'
 
 
@@ -17,7 +18,8 @@ export class Home extends Component {
                     <NavBar />
                     <Jumbo />
                 </div>
-                <Topcards />
+                
+                <Category />
                 <div className="container section2" style={{ padding: '0' }}>
                     <h1 className="heading2">
                     Our featured courses

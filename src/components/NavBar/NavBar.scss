@@ -1,16 +1,25 @@
+@import '../../../public/css/colors';
+
 .bg{
-    background: #6274ff;
-    box-shadow: 5px 4px 16px 0 #6274ff;
+    background: $subtopic;
+    box-shadow: 5px 4px 16px 0 $subtopic;
 }
 
 .navbar-brand{
     font-size: 1.5rem!important;
     font-weight: 900;
-    color: #fff!important;
+    color: $head!important;
 }
 .nav-link{
-    color: #fff!important;
+    color: $head!important;
     font-size: 1.2rem;
     font-weight: 900;
     padding-right: 1.5rem!important;
+}
+.dropdown-menu{
+    background-color: $subtopic;
+
+    .dropdown-item:hover{
+        background-color: $sublink;
+    }
 }

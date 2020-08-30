@@ -1,0 +1,29 @@
+@import '../../../public/css/colors';
+
+.category{
+    margin-top: -40px;
+    background: $head;
+    border-radius: 10px;
+    transition: .5s;
+}
+.category:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.icon{
+    color: #000;
+    background: none;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+h6{
+    text-align: center;
+    
+}
+.catinner{
+    padding: 20px!important;
+}
+.icons:hover{
+    background: #f2f2f2;
+    border-radius: 10px;
+}

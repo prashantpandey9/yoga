@@ -11,9 +11,9 @@ export class Footer extends Component {
                             <div className="col-xl-4 col-lg-5 col-md-4 col-sm-6">
                                 <h1>Recreatly</h1>
                                 <h5>Take the next step toward your personal and professional goals with us.</h5>
-                                <a href="prashantpandey.ml"><i class="fa fa-twitter"></i></a>
-                                <a href="prashantpandey.ml"><i class="fa fa-linkedin"></i></a>
-                                <a href="prashantpandey.ml"><i class="fa fa-github"></i></a>
+                                <a href="prashantpandey.ml"><i className="fa fa-twitter"></i></a>
+                                <a href="prashantpandey.ml"><i className="fa fa-linkedin"></i></a>
+                                <a href="prashantpandey.ml"><i className="fa fa-github"></i></a>
                             </div>
                             <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                                 <h5>Useful Links</h5>

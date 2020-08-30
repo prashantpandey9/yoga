@@ -1,6 +1,7 @@
+@import '../../../public/css/colors';
 .footer{
-    background: #4255a4;
-    color: #fff;
+    background: $card;
+    color: $head;
     
 }
 ul{
@@ -15,13 +16,13 @@ ul{
 }
     
 i{
-    background-color: #6274ff;
+    background-color: $theme1;
     border-radius: 50%;
-    color: #fff;
+    color: $head;
     padding: 10px ;
     margin: 5px;
 }
 a,a:hover{
     text-decoration: none;
-    color: #fff;
+    color: $head;
 }

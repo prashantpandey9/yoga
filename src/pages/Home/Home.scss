@@ -1,14 +1,16 @@
+@import '../../../public/css/colors'; 
+
 .con1{
     padding: 0 ;
 }
 .section1{
-    background-image: linear-gradient(#6274ff,#b956ff);
+    background-image: $theme;
     
 }
 .heading{
     padding-top: 40%;
-    color: #fff;
-    font-size: 60px;
+    color: $head;
+    font-size: 3.5rem;
     font-weight: 900;
     text-align: center;
     line-height: 1.3;
@@ -17,41 +19,29 @@
 .para1{
     text-align: center;
     line-height: 1.3;
-    color: #fff;
+    color: $head;
     font-weight: 500;
+    font-family: 'ubuntu';
 }
 .button{
     text-align: center;
     margin-left: 200px;
 }
-.card1{
-    justify-content: center;
-    margin-top: -40px;
-    width: 20em;
-    border-radius: 25px;
-    border-color: #fff;
-    transition: 0.8s;
-    margin-bottom: 65px;
-}
-.card1:hover {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    
-  }
 
 .row{
     margin: 0;
 }
 .card-title{
-    color: #4255A4;
+    color: $card;
     font-size: 20px;
     font-weight: 900;
 }
 .card-text{
-    color: #4255A4;
+    color: $card;
 }
 .heading2{
     text-align: center;
-    color: #4255A4;
+    color: $card;
     
     font-weight: 900;
 }
@@ -71,7 +61,7 @@
 }
 .subtopic{
     text-align: center;
-    color: #6274ff;
+    color: $subtopic;
     font-weight: bold;
     transition: all .5s ;
 }
@@ -79,14 +69,14 @@
 .left-heading{
     
     padding-top: 10%;
-    color: #4255A4;
+    color: $card;
     font-size: 50px;
     font-weight: 900;
     line-height: 1.3;
     
 }
 p{
-    color: #4255A4;
+    color: $card;
 }
 
 
