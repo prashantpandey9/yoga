@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/yoga/static/css/main.0ca21a66.chunk.css",
+    "main.js": "/yoga/static/js/main.d4e8718c.chunk.js",
+    "main.js.map": "/yoga/static/js/main.d4e8718c.chunk.js.map",
+    "runtime-main.js": "/yoga/static/js/runtime-main.066aa944.js",
+    "runtime-main.js.map": "/yoga/static/js/runtime-main.066aa944.js.map",
+    "static/css/2.f3cffc9e.chunk.css": "/yoga/static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.fb42b36d.chunk.js": "/yoga/static/js/2.fb42b36d.chunk.js",
+    "static/js/2.fb42b36d.chunk.js.map": "/yoga/static/js/2.fb42b36d.chunk.js.map",
+    "index.html": "/yoga/index.html",
+    "precache-manifest.87aae12080e35604d820b1fdfd42cd57.js": "/yoga/precache-manifest.87aae12080e35604d820b1fdfd42cd57.js",
+    "service-worker.js": "/yoga/service-worker.js",
+    "static/css/2.f3cffc9e.chunk.css.map": "/yoga/static/css/2.f3cffc9e.chunk.css.map",
+    "static/css/main.0ca21a66.chunk.css.map": "/yoga/static/css/main.0ca21a66.chunk.css.map",
+    "static/js/2.fb42b36d.chunk.js.LICENSE.txt": "/yoga/static/js/2.fb42b36d.chunk.js.LICENSE.txt",
+    "static/media/dance.jpg": "/yoga/static/media/dance.c36d6c04.jpg",
+    "static/media/drawing.jpg": "/yoga/static/media/drawing.d44c289b.jpg",
+    "static/media/faceshield.png": "/yoga/static/media/faceshield.8e8c40cb.png",
+    "static/media/music.jpg": "/yoga/static/media/music.6ebbbb6c.jpg",
+    "static/media/topic1.png": "/yoga/static/media/topic1.95540454.png",
+    "static/media/topic2.png": "/yoga/static/media/topic2.5afd60af.png",
+    "static/media/topic3.png": "/yoga/static/media/topic3.952e850a.png",
+    "static/media/topic4.png": "/yoga/static/media/topic4.7e4bfb6e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.066aa944.js",
+    "static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.fb42b36d.chunk.js",
+    "static/css/main.0ca21a66.chunk.css",
+    "static/js/main.d4e8718c.chunk.js"
+  ]
+}
