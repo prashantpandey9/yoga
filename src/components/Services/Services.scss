@@ -7,9 +7,27 @@
     padding-top: 40px;
 }
 .servicescard{
-    position: fixed;
-    
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 20px;
+    border-color: $head;
+    transition: 0.8s;
+    float: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-.heading3{
-    
+
+.servicehead{
+    padding: 20px;
+    margin-top: 40px;
+    color: $head;
+    font-family: 'ubuntu';
+    font-weight: 700;
+    p{
+        color: $head;
+        padding-top: 10px;
+        font-size: 1.2rem;
+        color: rgba($color: #fff, $alpha: 0.7);
+        font-weight: 500;
+    }
 }

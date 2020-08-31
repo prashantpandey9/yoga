@@ -14,7 +14,7 @@ export class NavBar extends Component {
 
                     <Nav.Link><Link to='/'>Home</Link></Nav.Link>
 
-                    <Nav.Link><Link to='aboutus'>About Us</Link></Nav.Link>
+                    <Nav.Link><Link to='/aboutus'>About Us</Link></Nav.Link>
                     <NavDropdown title="Categories" id="collasible-nav-dropdown" className='dropbg'>
                         <NavDropdown.Item ><Link to='/'>Music</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to='category#Dance'>Dance</Link></NavDropdown.Item>
@@ -25,11 +25,12 @@ export class NavBar extends Component {
                         <NavDropdown.Item ><Link to='aboutus'>Senior</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to='aboutus'>Others</Link></NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link><Link to='blog'>Blog</Link></Nav.Link>
-                    <Nav.Link><Link to='contactus'>Contact Us</Link></Nav.Link>
-                    <Nav.Link><Link to='mission'>Our Mission</Link></Nav.Link>
+                    <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
+                    <Nav.Link><Link to='/contactus'>Contact Us</Link></Nav.Link>
+                    <Nav.Link><Link to='/mission'>Our Mission</Link></Nav.Link>
                     </Nav>
-                    <Nav.Link><Link to='register'><Button variant="warning">Register</Button></Link></Nav.Link>
+                    <Nav.Link><Link to='/register'><Button variant="warning">Register</Button></Link></Nav.Link>
+                    <Nav.Link><Link to='/login'><Button variant="warning">Login</Button></Link></Nav.Link>
                     
                 </Navbar.Collapse>
                 </Navbar>
