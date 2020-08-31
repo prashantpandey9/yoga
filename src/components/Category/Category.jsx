@@ -55,7 +55,7 @@ const data = [
 
 const category = data.map(i => (
     <div className="col-md-2 col-sm-4 col-lg-2 icons">
-        <Link> <i className={ i.icon }></i> </Link>
+        <Link to={`/${i.title}/detail`}> <i className={ i.icon }></i> </Link>
         <h6> {i.title}</h6>
     </div>
 ))
