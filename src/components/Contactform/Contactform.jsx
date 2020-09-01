@@ -3,10 +3,10 @@ import './Contactform.scss'
 import axios from "axios"; 
 class ContactForm extends Component {
     state = {
-      first_name: '',
-      last_name: '', 
-      email: '', 
-      text: '',
+      first_name: 'sd',
+      last_name: 'sd', 
+      email: 'asd@mail.cpm', 
+      text: 'asd',
     };/* This is where the magic happens */
     handleSubmit = event => {
       event.preventDefault();
@@ -23,13 +23,11 @@ class ContactForm extends Component {
           console.log(res.data);
           // window.location = "/" 
         })
-        .then(error => console.log(error));
+        .catch(error => console.log(error));
+      
     }
   handleChange = event =>{
-      this.setState({ first_name: event.target.value,
-                      last_name: event.target.value ,  
-                      email: event.target.value,
-                      text: event.target.value            
+      this.setState({ [event.target.name]: event.target.value,         
       });
     }
   render() {
@@ -40,16 +38,16 @@ class ContactForm extends Component {
             <div className="col-sm-12 col-md-6 col-lg-6">
                 <form action="#" name="contact_form" className='contactform' onSubmit = { this.handleSubmit } >
                     <label for="first_name">First Name</label>
-                    <input name="first_name" type="text" required placeholder="John"/>
+                    <input name="first_name" onChange= {this.handleChange} type="text" required placeholder="John"/>
                     <br />
                     <label for="last_name">Last Name</label>
-                    <input name="last_name" type="text" required placeholder="Doe"/>
+                    <input name="last_name" onChange= {this.handleChange} type="text" required placeholder="Doe"/>
                     <br />
                     <label for="email">Email</label>
-                    <input name="email" type="email" required placeholder="you@domain.com"/>
+                    <input name="email" onChange= {this.handleChange} type="email" required placeholder="you@domain.com"/>
                     <br />
-                    <label for="message">Message</label><br />
-                    <textarea name="message" cols="30" rows="10" placeholder="Enter your message here ..." required> </textarea>
+                    <label >Message</label><br />
+                    <textarea name="text" onChange= {this.handleChange} cols="30" rows="10" placeholder="Enter your message here ..." required> </textarea>
                     <div class="center">
                         <input type="submit" value="Submit" />
                     </div>
