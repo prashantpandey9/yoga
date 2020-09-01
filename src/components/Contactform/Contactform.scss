@@ -4,12 +4,13 @@
 
 /* Add styles to 'label' selector */
 label {
-	font-size: 0.85em;
-	margin-left: 12px;
+	font-size: 1em;
+    
+    font-family: 'ubuntu';
 }
 
 /* Add styles to 'input' and 'textarea' selectors */
-input[type=text],input[type=email], textarea {
+input[type=text][name=first_name],input[type=text][name=last_name],,input[type=email], textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -54,4 +55,14 @@ input[type=submit]:hover {
 /* Align items to center of the 'div' with the class 'center' */
 .center {
 	text-align: center;
+}
+.contactus{
+    margin-top: -40px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin-bottom: 30px;
+	border-radius: 20px;
+}
+.contactform{
+    padding: 50px;
 }

@@ -4,58 +4,58 @@ import {Link} from 'react-router-dom'
 const data = [
     {
         icon: 'fa fa-twitter icon   ',
-        title: 'Hle'
+        title: 'Music'
     },
     {
         icon: 'fa fa-twitter icon',
-        title: 'Hle'
+        title: 'Sports'
     },
     {
         icon: 'fa fa-twitter icon   ',
-        title: 'Hle'
+        title: 'Language'
     },
     {
         icon: 'fa fa-twitter icon',
-        title: 'Hle'
+        title: 'Language'
     },
     {
         icon: 'fa fa-twitter icon   ',
-        title: 'Hle'
+        title: 'Language'
     },
     {
         icon: 'fa fa-twitter icon',
-        title: 'Hle'
+        title: 'Language'
     },
     {
         icon: 'fa fa-twitter icon   ',
-        title: 'Hle'
+        title: 'Language'
     },
     {
         icon: 'fa fa-twitter icon',
-        title: 'Hle'
+        title: 'Dance'
     },
     {
         icon: 'fa fa-twitter icon   ',
-        title: 'Hle'
+        title: 'Dance'
     },
     {
         icon: 'fa fa-twitter icon',
-        title: 'Hle'
+        title: 'Dance'
     },
     {
         icon: 'fa fa-twitter icon   ',
-        title: 'Hle'
+        title: 'Dance'
     },
     {
         icon: 'fa fa-twitter icon',
-        title: 'Hle'
+        title: 'Dance'
     },
 
 ]
 
 const category = data.map(i => (
     <div className="col-md-2 col-sm-4 col-lg-2 icons">
-        <Link> <i className={ i.icon }></i> </Link>
+        <Link to={`/${i.title}/detail`}> <i className={ i.icon }></i> </Link>
         <h6> {i.title}</h6>
     </div>
 ))

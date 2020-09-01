@@ -1,14 +1,14 @@
 @import '../../../public/css/colors';
 
 .category{
-    margin-top: -40px;
+    margin-top: 40px;
     background: $head;
     border-radius: 10px;
     transition: .5s;
+    // position: relative;
+    // z-index: 0;
 }
-.category:hover{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
+
 .icon{
     color: #000;
     background: none;
@@ -26,4 +26,6 @@ h6{
 .icons:hover{
     background: #f2f2f2;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all .5s;
 }
