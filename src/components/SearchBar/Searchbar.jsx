@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import './Searchbar.scss'
-
+import { Link } from 'react-router-dom'
 class Name extends Component {
     render() {
         return (
-            <div>
-                {this.props.name}
-            </div>
+          <li>
+            <Link to={this.props.name} style={{color: 'rgba(0,0,0,0.8 )'}}> 
+              {this.props.name}
+            </Link>
+          </li>
+            
+                
+            
         )
     }
 }
 class NamesContainer extends Component {
     render() {
         return (
-            <li>
+            <ul>
                 {this.props.names.map(name => <Name name = {name}/>)}
-            </li>
+            </ul>
         )
     }
 }
@@ -29,26 +34,26 @@ export class Searchbar extends Component {
     
       editSearchTerm = (e) => {
         this.setState({searchTerm: e.target.value})
+        document.getElementById('ul').style.display = "block";
       }
     
       dynamicSearch = () => {
         return this.state.names.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
       }
       
-     content = () =>{
-         return(
-          <div>
-              
-          </div> 
-         )
+     focus = () =>{
+        document.getElementById('ul').style.display = "block";
+      }
+      blur = () =>{
+        document.getElementById('ul').style.display = "none";
       }
     
     render() {
         return (
             <div>
-                <div className='searchbarcontainer'>
-                <i className='fa fa-search serachicon'></i><input type="text" className='searchbar'  onChange = {this.editSearchTerm} value = {this.state.searchTerm} placeholder='Search for city' onFocus={this.content}/>
-                <ul> <NamesContainer names = {this.dynamicSearch()}/></ul> 
+                <div className='searchbarcontainer' onMouseLeave ={this.blur}>
+                <i className='fa fa-search serachicon'></i><input type="text" className='searchbar'  onFocus= {this.focus} onChange = {this.editSearchTerm} value = {this.state.searchTerm} placeholder='Search for city'  />
+                <div  id='ul'> <NamesContainer names = {this.dynamicSearch()}/></div> 
                 </div>
             </div>
         )
