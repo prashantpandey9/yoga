@@ -9,6 +9,7 @@ import NavBar from '../../components/NavBar/NavBar'
 // import LinkTitle from '../../components/LinkTitle/LinkTitle'
 import Category from '../../components/Category/Category'
 // import Topcards from '../../components/Topcards/Topcards'
+import Footer from '../../components/Footer/Footer'
 export default function State(props) {
     return (
         <div classname='container-fluid con1'>
@@ -34,7 +35,8 @@ export default function State(props) {
                     </h1>
                     <br />
                     <Subjects />
-                </div>
+            </div>
+            <Footer />    
         </div>
     )
 }

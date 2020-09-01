@@ -24,12 +24,13 @@ class NamesContainer extends Component {
         )
     }
 }
+NamesContainer.defaultProps = { name: 'Music' };
 export class Searchbar extends Component {
     state = {
         names: [
           'Music', 'Language', 'Sports', 'Video Games', 'Khloe Kardashian', 'George Bush', 'Queen Elizabeth', 'Yeezy', 'Ivanka Trump', 'Leonardo DiCaprio', 
         ],
-        searchTerm: ''
+        searchTerm: '',
       }
     
       editSearchTerm = (e) => {
