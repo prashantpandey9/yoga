@@ -2,9 +2,9 @@ import React from "react";
 
 import './login.scss'
 export default class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -24,7 +24,6 @@ export default class Login extends React.Component {
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" placeholder="password" />
-
                   </div>
                   <button type="Submit" className="btn btn-warning">
                     Login
