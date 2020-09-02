@@ -2,11 +2,11 @@ import React from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import './Services.scss'
 import Footer from '../../components/Footer/Footer'
-const detail=[{
-    city: '',
-    title: '',
-    subtopic: '',
-}]
+// const detail=[{
+//     city: '',
+//     title: '',
+//     subtopic: '',
+// }]
 export default function Services() {
     return (
         <div>
