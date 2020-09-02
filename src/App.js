@@ -14,6 +14,7 @@ import Blog from './pages/Blog/Blog'
 import Mission from './pages/Mission/Mission'
 import State from './pages/State/State'
 import Courses from './pages/Courses/Courses'
+import Loginpage from './pages/Login/Loginpage'
 function App() {
   return (
     <div className="App">
@@ -26,8 +27,10 @@ function App() {
           <Route exact path='/contactus' component={Contact} />
           <Route exact path='/blog' component={Blog} />
           <Route exact path='/mission' component={Mission} />
-          <Route exact path='/:id' component={State} />
+          <Route exact path='/category/:id' component={State} />
           <Route exact path='/:id/detail' component={Courses} />
+          <Route exact path='/login' component={Loginpage} />
+          {/* <Route exact path='/register' component={Loginregister} /> */}
       </Switch>
   </BrowserRouter>
     </div>

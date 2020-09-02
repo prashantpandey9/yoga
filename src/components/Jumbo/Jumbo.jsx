@@ -1,8 +1,7 @@
 import React from 'react';
 import {Image, Row, Col }from 'react-bootstrap'
 import car from '../../assets/images/faceshield.png'
-// import Topcards from '../../components/Topcards/Topcards'
-import Searchbar from '../../components/SearchBar/Searchbar'
+
 const Jumbo = () => {
    return (
     <Row className="section1">

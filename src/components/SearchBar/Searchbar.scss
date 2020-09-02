@@ -17,7 +17,9 @@
     // transition: all .5s;
    border: none!important;
 }
-
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
 .searchbarcontainer{
     height: 54px;
     background : #fff;
