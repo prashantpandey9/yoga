@@ -1,12 +1,13 @@
 import React ,{ Component }from 'react'
 import './Contactform.scss'
 import axios from "axios"; 
+import { contactAPI } from '../../api/contactApi'
 class ContactForm extends Component {
     state = {
-      first_name: 'sd',
-      last_name: 'sd', 
-      email: 'asd@mail.cpm', 
-      text: 'asd',
+      first_name: '',
+      last_name: '', 
+      email: '', 
+      text: '',
     };/* This is where the magic happens */
     handleSubmit = event => {
       event.preventDefault();
@@ -17,11 +18,11 @@ class ContactForm extends Component {
         text: this.state.text,
 
       }
-      axios.post('http://127.0.0.1:8000/contact/', { user })
+      axios.post(contactAPI , { user })
         .then(res=>{
           console.log(res);
           console.log(res.data);
-          // window.location = "/" 
+
         })
         .catch(error => console.log(error));
       
