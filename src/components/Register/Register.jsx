@@ -5,7 +5,7 @@ import { registerAPI } from '../../api/authApi'
 import axios from "axios"; 
 import Alert from '../Alerts/Alert'
 import { Redirect } from 'react-router-dom'
-import Loginpage from '../../pages/Loginpage/Loginpage'
+
 export default class Register extends React.Component {
   state = {
     username: '', 
@@ -33,6 +33,7 @@ export default class Register extends React.Component {
 
         if (res.data.status===201){
           localStorage.setItem("token", res.data.data['token']);
+          localStorage.setItem("isAuth", "false");
           this.setState({alert: 'success', alertMessage: res.data.msg});
           this.setState({isAuthenticated : true})
           
@@ -65,7 +66,7 @@ handleChange = event =>{
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-4 col-lg-4"></div>
-            <div className="col-sm-12 col-md-4 col-lg-4 login form">
+            <div className="col-sm-12 col-md-4 col-lg-4 login ">
               <center><h3>Register</h3></center>
               <div className="content">
                   <div className="form">

@@ -1,61 +1,40 @@
 import React from 'react'
 import './Category.scss'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDrum, faGuitar, faMicrophone, faPencilAlt, faGamepad, faBiking } from '@fortawesome/free-solid-svg-icons'
 const data = [
     {
-        icon: 'fa fa-twitter icon   ',
-        title: 'Music'
+        icon: faGuitar,
+        title: 'Guitar'
     },
     {
-        icon: 'fa fa-twitter icon',
-        title: 'Sports'
+        icon: faDrum,
+        title: 'Drums'
     },
     {
-        icon: 'fa fa-twitter icon   ',
-        title: 'Language'
+        icon:  faMicrophone,
+        title: 'Vocal'
     },
     {
-        icon: 'fa fa-twitter icon',
-        title: 'Language'
+        icon: faPencilAlt,
+        title: 'Sketching'
     },
     {
-        icon: 'fa fa-twitter icon   ',
-        title: 'Language'
+        icon: faGamepad,
+        title: 'Gaming'
     },
     {
-        icon: 'fa fa-twitter icon',
-        title: 'Language'
+        icon:  faBiking,
+        title: 'Cycling'
     },
-    {
-        icon: 'fa fa-twitter icon   ',
-        title: 'Language'
-    },
-    {
-        icon: 'fa fa-twitter icon',
-        title: 'Dance'
-    },
-    {
-        icon: 'fa fa-twitter icon   ',
-        title: 'Dance'
-    },
-    {
-        icon: 'fa fa-twitter icon',
-        title: 'Dance'
-    },
-    {
-        icon: 'fa fa-twitter icon   ',
-        title: 'Dance'
-    },
-    {
-        icon: 'fa fa-twitter icon',
-        title: 'Dance'
-    },
+    
 
 ]
 
 const category = data.map(i => (
     <div className="col-md-2 col-sm-4 col-lg-2 icons">
-        <Link to={`/${i.title}/detail`}> <i className={ i.icon }></i> </Link>
+        <Link to={`/${i.title}/detail`}> <FontAwesomeIcon icon={i.icon} className="icon"/> </Link>
         <h6> {i.title}</h6>
     </div>
 ))

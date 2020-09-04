@@ -1,51 +1,14 @@
-import React, { Component, useContext } from 'react';
+import React, { Component } from 'react';
 import './NavBar.scss'
 import {Navbar, Nav, NavDropdown, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { UserContext} from '../../UserContext'
-var button;
 
 
-// // console.log(state)
-export  function Loggedout() {
-    return (
-        <Nav>
-           
-            <Nav.Link><Link to='/register'><Button variant="warning">Register</Button></Link></Nav.Link>
-            <Nav.Link><Link to='/login'><Button variant="warning">Login </Button></Link></Nav.Link>
-                    
-        </Nav>
-    )
-}
-
-export  function Loggedin() {
-    
-    return (
-        <NavDropdown title={localStorage.getItem('username')} id="collasible-nav-dropdown" className='dropbg'>
-            <NavDropdown.Item ><Link to='category#Dance'>Manage Cart</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to='aboutus'>Contact</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to='' onClick={()=>{
-                localStorage.setItem('isAuth', 'false');
-            }}>
-                Logout 
-            </Link></NavDropdown.Item>
-        </NavDropdown>
-    )
-}
-
-if (localStorage.getItem('isAuth')==='true'){
-    button= <Loggedin />
-    // window.location.reload();
-    
-}
-else{
-    button= <Loggedout />
-    
-}
-
-export  const NavBar = ()=> {
-        const msd= useContext(UserContext);
-
+export class PrivateNav extends Component {
+    handleSubmit = event =>{
+        localStorage.setItem('isAuth','false');
+    }
+    render() {
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" className="bg" fixed="top">
@@ -68,17 +31,20 @@ export  const NavBar = ()=> {
                         <NavDropdown.Item ><Link to='aboutus'>Senior</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to='aboutus'>Others</Link></NavDropdown.Item>
                     </NavDropdown>
+                    
                     <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
                     <Nav.Link><Link to='/contactus'>Contact Us</Link></Nav.Link>
                     <Nav.Link><Link to='/mission'>Our Mission</Link></Nav.Link>
                     </Nav>
-                    {button}
+                    
+                    
+                    
                 </Navbar.Collapse>
                 </Navbar>
             </div>
 
         )
-    
+    }
 }
 
-export default NavBar
+export default PrivateNav;
