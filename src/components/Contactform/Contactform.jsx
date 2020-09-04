@@ -1,6 +1,8 @@
 import React ,{ Component }from 'react'
 import './Contactform.scss'
 import axios from "axios"; 
+import Alert from '../Alerts/Alert'
+
 import { contactAPI } from '../../api/contactApi'
 class ContactForm extends Component {
     state = {
@@ -8,7 +10,8 @@ class ContactForm extends Component {
       last_name: '', 
       email: '', 
       text: '',
-    };/* This is where the magic happens */
+    };
+    
     handleSubmit = event => {
       event.preventDefault();
       const user = {
@@ -21,10 +24,21 @@ class ContactForm extends Component {
       axios.post(contactAPI , { user })
         .then(res=>{
           console.log(res);
-          console.log(res.data);
-
+          
+          if (res.data.status===201){
+            
+            this.setState({alert: 'success', alertMessage: res.data.msg})
+            
+           
+          }
+          else if (res.data.status===400){
+            this.setState({alert: 'error', alertMessage: res.data.msg})
+          }
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+          console.log(error)
+          this.setState({alert: 'error', alertMessage:"The server is not excepting any request at this moment!! Try again later"})
+        });
       
     }
   handleChange = event =>{
@@ -32,7 +46,9 @@ class ContactForm extends Component {
       });
     }
   render() {
+      let {alert , alertMessage}= this.state ;
       return (
+        
         <div class="container">
         <div className="row contactus">
             <div className="col-sm-3 col-md-3 col-lg-3"></div>
@@ -52,6 +68,9 @@ class ContactForm extends Component {
                     <div class="center">
                         <input type="submit" value="Submit" />
                     </div>
+                    <br />
+                    { alert === 'success' && <Alert alert={alertMessage} type="success"/> }
+                    { alert === 'error' && <Alert alert={alertMessage} type="danger"/> }
                 </form>	
             </div>
         </div>

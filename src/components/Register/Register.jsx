@@ -1,53 +1,53 @@
 import React from "react";
 import '../Login/login.scss'
+import './Register.scss'
 import { registerAPI } from '../../api/authApi'
 import axios from "axios"; 
-import Fail from '../Alerts/Fail'
-import Success from '../Alerts/Success'
-import ReactDOM from 'react-dom';
+import Alert from '../Alerts/Alert'
+import { Redirect } from 'react-router-dom'
+import Loginpage from '../../pages/Loginpage/Loginpage'
 export default class Register extends React.Component {
   state = {
     username: '', 
     email: '', 
     password: '',
-  };/* This is where the magic happens */
+    first_name: '',
+    last_name: '',
+    isAuthenticated: false
+  };
+  
+  
   handleSubmit = event => {
     event.preventDefault();
     const user = {
       username: this.state.username,
       email: this.state.email, 
       password: this.state.password,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name
 
     }
     axios.post(registerAPI , user )
       .then(res=>{
-        console.log(res);
-        localStorage.setItem("token", res.data.data['token']);
-        
-        if (res.data.status===201){
-          ReactDOM.render(
-            
-              <Success alert={res.data.msg}/>
-            
-            ,document.getElementById('alert')
-          )
+        console.log(res)
 
+        if (res.data.status===201){
+          localStorage.setItem("token", res.data.data['token']);
+          this.setState({alert: 'success', alertMessage: res.data.msg});
+          this.setState({isAuthenticated : true})
+          
+         
         }
         else if (res.data.status===400){
-          ReactDOM.render(
-            
-              <Fail alert={res.data.['data']}/>
-            
-            ,document.getElementById('alert')
-          )
-
+          this.setState({alert: 'error', alertMessage: res.data.msg})
         }
-
-
-        
         
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error)
+        this.setState({alert: 'error', alertMessage:"The server is not excepting any request at this moment!! Try again later"})
+        
+      });
     
   }
 handleChange = event =>{
@@ -55,6 +55,11 @@ handleChange = event =>{
     });
   }
   render() {
+    let { alert, alertMessage } = this.state;
+    if (this.state.isAuthenticated) {
+       return <Redirect to='/login' />
+         
+    };
     return (
       <div className="base-container" >
         <div className="container">
@@ -66,6 +71,11 @@ handleChange = event =>{
                   <div className="form">
                     <form action="#" name="contact_form" className='contactform' onSubmit = { this.handleSubmit } >
                       <div className="form-group">
+                        <label htmlFor="first_name">First Name</label>
+                        <input type="text" name="first_name" placeholder="first_name" onChange= {this.handleChange} required/>
+
+                        <label htmlFor="last_name">Last Name</label>
+                        <input type="text" name="last_name" placeholder="last_name" onChange= {this.handleChange} required/>
                         <label htmlFor="username">Username</label>
                         <input type="text" name="username" placeholder="username" onChange= {this.handleChange} required/>
                     
@@ -79,12 +89,14 @@ handleChange = event =>{
                           Register
                         </button>
                       </div>
+                      { alert === 'success' && <Alert alert={alertMessage} type="success"/> }
+                      { alert === 'error' && <Alert alert={alertMessage} type="danger"/> }
                     </form>
                   </div>
                 
               </div>
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-4" id="alert" ></div>
+            
           </div>
         </div>
         
