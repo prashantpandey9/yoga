@@ -6,7 +6,7 @@ import { UserContext} from '../../Context/UserContext'
 var button;
 // // console.log(state)
 export  function Loggedout() {
-    const {  state  } = useContext(UserContext);
+    
     return (
         <Nav>
            
@@ -23,14 +23,11 @@ export  function Loggedin() {
         <NavDropdown title={localStorage.getItem('username')} id="collasible-nav-dropdown" className='dropbg'>
             <NavDropdown.Item ><Link to='category#Dance'>Manage Cart</Link></NavDropdown.Item>
             <NavDropdown.Item ><Link to='aboutus'>Contact</Link></NavDropdown.Item>
-            <NavDropdown.Item ><Link to='' onClick={()=>{
+            <NavDropdown.Item><Link onClick={()=>{
                 dispatch({
                     type: "LOGOUT",
-                    
                   })
-            }}>
-                Logout 
-            </Link></NavDropdown.Item>
+            }}>Logout</Link></NavDropdown.Item>
         </NavDropdown>
     )
 }

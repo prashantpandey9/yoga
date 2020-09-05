@@ -5,15 +5,16 @@ import { registerAPI } from '../../api/authApi'
 import axios from "axios"; 
 import Alert from '../Alerts/Alert'
 import { Redirect } from 'react-router-dom'
+import { UserContext } from "../../Context/UserContext";
 
 export default class Register extends React.Component {
+  
   state = {
     username: '', 
     email: '', 
     password: '',
     first_name: '',
     last_name: '',
-    isAuthenticated: false
   };
   
   

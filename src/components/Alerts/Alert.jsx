@@ -13,13 +13,14 @@ export default function Success({alert, type}) {
         }
     }
     return (
-        
+            <>
             <div className={`alert alert-${type} alert-dismissible fade show`} role="alert">
                  {getMessage()}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            </>
         
     )
 }

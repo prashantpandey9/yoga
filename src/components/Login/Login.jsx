@@ -1,7 +1,7 @@
 import React, {useState, useContext } from "react";
 import { loginAPI } from '../../api/authApi'
 import axios from "axios"; 
-// import Alert from '../Alerts/Alert'
+import Alert from '../Alerts/Alert'
 import { Redirect } from 'react-router-dom'
 import './login.scss'
 
@@ -15,8 +15,8 @@ export const Login = () => {
   const initialState = {
     username: "",
     password: "",
-    isSubmitting: false,
-    errorMessage: null
+    errorMessage: "",
+    error: ""
   };
   const [data, setData] = useState(initialState);
   const handleInputChange = event => {
@@ -29,7 +29,6 @@ export const Login = () => {
     event.preventDefault();
     setData({
       ...data,
-      isSubmitting: true,
       errorMessage: null
     });
     
@@ -48,21 +47,32 @@ export const Login = () => {
             type: "LOGIN",
             payload: {username: res.username, token: res.token, user_id: res.user_id}
           })
-          return <Redirect to='/' />
+          setData({
+            ...data,
+            error: "success",
+            errorMessage: res.data.msg
+          });
+          
+        }
+        else if (res.data.status===400){
+          setData({
+            ...data,
+            error: "error",
+            errorMessage: res.data.msg
+          });
         }
       })
           
       .catch(error => {
-        console.log(data)
-        setData({
-          ...data,
-          isSubmitting: false,
-          errorMessage: error.message || error.statusText
+            setData({
+            ...data,
+            errorMessage: "The server is not excepting any request at this moment. Try again later!",
+            error: 'error'
+          });
         });
-      });
     
   }
-
+if (state.isAuthenticated){return <Redirect to='/' />}
 return (
   
   <div className="base-container">
@@ -86,9 +96,12 @@ return (
                  <button type="Submit" className="btn btn-warning">
                     Login
                   </button>
-                  
-                 
                 </div>
+                <br />
+                <div>
+                { data.error === 'success' && <Alert alert={data.errorMessage} type="success"/> }
+                 { data.error === 'error' && <Alert alert={data.errorMessage} type="danger"/> }
+                 </div>
               </div>
             </form>
           
@@ -99,7 +112,7 @@ return (
         </div>
         
       </div>
-  );
+  )
 };
 export default Login;
 
