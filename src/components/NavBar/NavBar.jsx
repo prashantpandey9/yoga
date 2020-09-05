@@ -1,13 +1,12 @@
-import React, { Component, useContext } from 'react';
+import React, {  useContext } from 'react';
 import './NavBar.scss'
 import {Navbar, Nav, NavDropdown, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { UserContext} from '../../UserContext'
+import { UserContext} from '../../Context/UserContext'
 var button;
-
-
 // // console.log(state)
 export  function Loggedout() {
+    const {  state  } = useContext(UserContext);
     return (
         <Nav>
            
@@ -19,13 +18,16 @@ export  function Loggedout() {
 }
 
 export  function Loggedin() {
-    
+    const {  state, dispatch  } = useContext(UserContext);
     return (
         <NavDropdown title={localStorage.getItem('username')} id="collasible-nav-dropdown" className='dropbg'>
             <NavDropdown.Item ><Link to='category#Dance'>Manage Cart</Link></NavDropdown.Item>
             <NavDropdown.Item ><Link to='aboutus'>Contact</Link></NavDropdown.Item>
             <NavDropdown.Item ><Link to='' onClick={()=>{
-                localStorage.setItem('isAuth', 'false');
+                dispatch({
+                    type: "LOGOUT",
+                    
+                  })
             }}>
                 Logout 
             </Link></NavDropdown.Item>
@@ -33,18 +35,12 @@ export  function Loggedin() {
     )
 }
 
-if (localStorage.getItem('isAuth')==='true'){
-    button= <Loggedin />
-    // window.location.reload();
-    
-}
-else{
-    button= <Loggedout />
-    
-}
+
+
+
 
 export  const NavBar = ()=> {
-        const msd= useContext(UserContext);
+        const {  state  } = useContext(UserContext);
 
         return (
             <div>
@@ -72,7 +68,7 @@ export  const NavBar = ()=> {
                     <Nav.Link><Link to='/contactus'>Contact Us</Link></Nav.Link>
                     <Nav.Link><Link to='/mission'>Our Mission</Link></Nav.Link>
                     </Nav>
-                    {button}
+                    {state.isAuthenticated ? <Loggedin />: <Loggedout />}
                 </Navbar.Collapse>
                 </Navbar>
             </div>

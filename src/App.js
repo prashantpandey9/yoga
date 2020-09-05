@@ -1,4 +1,4 @@
-import React, {useState, useReducer}from 'react';
+import React, { useReducer}from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -16,40 +16,13 @@ import State from './pages/State/State'
 import Courses from './pages/Courses/Courses'
 import Loginpage from './pages/Loginpage/Loginpage'
 import Registerpage from './pages/Registerpage/Registerpage'
-import { UserContext } from './UserContext';
+import { UserContext } from './Context/UserContext';
 
-const initialState = {
-  isAuthenticated: false,
-  username: null,
-  token: null,
-  user_id: null,
-};
+import { reducer , initialState } from './Context/authReducer'
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "LOGIN":
-      localStorage.setItem("user", JSON.stringify(action.payload.user));
-      localStorage.setItem("token", JSON.stringify(action.payload.token));
-      return {
-        ...state,
-        isAuthenticated: true,
-        user: action.payload.user,
-        token: action.payload.token
-      };
-    case "LOGOUT":
-      localStorage.clear();
-      return {
-        ...state,
-        isAuthenticated: false,
-        user: null
-      };
-    default:
-      return state;
-  }
-}
 export default function App() {
+  const [state, dispatch] = useReducer( reducer,initialState )
   
-  const [state, dispatch] = useReducer( reducer, initialState)
   return (
     <div className="App">
       
