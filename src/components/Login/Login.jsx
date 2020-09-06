@@ -1,82 +1,109 @@
-import React from "react";
+import React, {useState, useContext } from "react";
 import { loginAPI } from '../../api/authApi'
 import axios from "axios"; 
 import Alert from '../Alerts/Alert'
 import { Redirect } from 'react-router-dom'
 import './login.scss'
-export default class Login extends React.Component {
-  state = {
-    username: '', 
-    password: '',
+
+import { UserContext } from "../../Context/UserContext";
+
+export const Login = () => {
+  
+
+  const { state, dispatch } = useContext(UserContext);
+  
+  const initialState = {
+    username: "",
+    password: "",
+    errorMessage: "",
+    error: ""
   };
-  
-  
-  handleSubmit = event => {
+  const [data, setData] = useState(initialState);
+  const handleInputChange = event => {
+      setData({
+        ...data,
+        [event.target.name]: event.target.value
+      });
+    };
+  const handleFormSubmit = event => {
     event.preventDefault();
-    const user = {
-      username: this.state.username,
-      email: this.state.email, 
-      password: this.state.password,
-      first_name: this.state.first_name,
-      last_name: this.state.last_name
-
-    }
-    axios.post(loginAPI , user )
-      .then(res=>{
+    setData({
+      ...data,
+      errorMessage: null
+    });
+    
+    
+    axios.post(loginAPI , 
+    {
+      username: data.username,
+      password: data.password
+    })
+      .then(res =>{
         console.log(res)
-
-        if (res.data.status===201){
-          localStorage.setItem("token", res.data.data['token']);
-          this.setState({alert: 'success', alertMessage: res.data.msg});
-          this.setState({isAuthenticated : true})
+        
+        if (res.data.status===200){
+          res=res.data.data
+          dispatch({
+            type: "LOGIN",
+            payload: {username: res.username, token: res.token, user_id: res.user_id}
+          })
+          setData({
+            ...data,
+            error: "success",
+            errorMessage: res.data.msg
+          });
           
-         
         }
         else if (res.data.status===400){
-          this.setState({alert: 'error', alertMessage: res.data.msg})
+          setData({
+            ...data,
+            error: "error",
+            errorMessage: res.data.msg
+          });
         }
-        
       })
+          
       .catch(error => {
-        console.log(error)
-        this.setState({alert: 'error', alertMessage:"The server is not excepting any request at this moment!! Try again later"})
-        this.setState({isAuthenticated : true})
-      });
+            setData({
+            ...data,
+            errorMessage: "The server is not excepting any request at this moment. Try again later!",
+            error: 'error'
+          });
+        });
     
   }
-handleChange = event =>{
-    this.setState({ [event.target.name]: event.target.value,         
-    });
-  }
-
-  render() {
-    let { alert, alertMessage } = this.state;
-    return (
-      <div className="base-container">
+if (state.isAuthenticated){return <Redirect to='/' />}
+return (
+  
+  <div className="base-container">
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-4 col-lg-4"></div>
-            <div className="col-sm-12 col-md-4 col-lg-4 login form">
-            
+            <div className="col-sm-12 col-md-4 col-lg-4 login ">
+            <form action="#" name="contact_form" className='contactform' onSubmit={ handleFormSubmit } >
               <div className="content">
                 <center><h3>Login</h3></center>
                 <div className="form">
                   <div className="form-group">
                     <label htmlFor="username">Username</label>
-                    <input type="text" name="username" placeholder="username" />
+                    <input type="text" name="username" placeholder="username" value={data.username} onChange={ handleInputChange } required/>
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" placeholder="" />
+                    <input type="password" name="password" placeholder="" value={data.password} onChange={ handleInputChange } required/>
                   </div>
-                  <button type="Submit" className="btn btn-warning">
+      
+                 <button type="Submit" className="btn btn-warning">
                     Login
                   </button>
-                  { alert === 'success' && <Alert alert={alertMessage} type="success"/> }
-                  { alert === 'error' && <Alert alert={alertMessage} type="danger"/> }
                 </div>
+                <br />
+                <div>
+                { data.error === 'success' && <Alert alert={data.errorMessage} type="success"/> }
+                 { data.error === 'error' && <Alert alert={data.errorMessage} type="danger"/> }
+                 </div>
               </div>
-        
+            </form>
           
         
             </div>
@@ -85,6 +112,7 @@ handleChange = event =>{
         </div>
         
       </div>
-    );
-  }
-}
+  )
+};
+export default Login;
+
