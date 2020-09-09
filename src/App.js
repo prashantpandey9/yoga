@@ -48,7 +48,7 @@ export default function App() {
                 <Route exact path='/:id/detail' component={Courses} />
                 <Route exact path='/login' component={Loginpage} />
                 <Route exact path='/register' component={Registerpage} />
-                <Route  component={() => "404 Not Found"} />
+                
                 <Route exact path='/course/:title' render={(props) => <Coursedetail {...props} />}/>
               </UserContext.Provider>
           </Switch>

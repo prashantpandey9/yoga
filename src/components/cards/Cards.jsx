@@ -6,7 +6,7 @@ import Dance from '../../assets/images/dance.jpg';
 import Drawing from '../../assets/images/drawing.jpg'
 import Music from '../../assets/images/music.jpg'
 import OwlCarousel from 'react-owl-carousel';
-const options = {
+export const options = {
   responsiveClass: true,
   autoplay: true,
   loop: true,
