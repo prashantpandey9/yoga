@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import LinkTitle from '../../components/LinkTitle/LinkTitle'
 import Footer from '../../components/Footer/Footer'
+// import Missioncards from '../../components/Missioncards/Missioncards'
+// import {CardDeck} from 'react-bootstrap';
 export class Mission extends Component {
     render() {
         return (

@@ -16,7 +16,8 @@ export const Login = () => {
     username: "",
     password: "",
     errorMessage: "",
-    error: ""
+    error: "",
+    loading: false
   };
   const [data, setData] = useState(initialState);
   const handleInputChange = event => {
@@ -29,9 +30,9 @@ export const Login = () => {
     event.preventDefault();
     setData({
       ...data,
-      errorMessage: null
-    });
-    
+      errorMessage: null,
+      loading: true,
+    });  
     
     axios.post(loginAPI , 
     {
@@ -40,12 +41,13 @@ export const Login = () => {
     })
       .then(res =>{
         console.log(res)
-        
+        console.log(res.data.msg)
+        console.log(typeof res.data.msg)
         if (res.data.status===200){
-          res=res.data.data
+          let r=res.data.data
           dispatch({
             type: "LOGIN",
-            payload: {username: res.username, token: res.token, user_id: res.user_id}
+            payload: {username: r.username, token: r.token, user_id: r.user_id}
           })
           setData({
             ...data,
@@ -72,14 +74,18 @@ export const Login = () => {
         });
     
   }
-if (state.isAuthenticated){return <Redirect to='/' />}
+
+if (state.isAuthenticated){
+    return <Redirect to='/' />
+}
+
 return (
   
   <div className="base-container">
         <div className="container">
           <div className="row">
-            <div className="col-sm-12 col-md-4 col-lg-4"></div>
-            <div className="col-sm-12 col-md-4 col-lg-4 login ">
+            <div className="col-sm-12 col-md-3 col-lg-3"></div>
+            <div className="col-sm-12 col-md-6 col-lg-6 login ">
             <form action="#" name="contact_form" className='contactform' onSubmit={ handleFormSubmit } >
               <div className="content">
                 <center><h3>Login</h3></center>
@@ -93,21 +99,24 @@ return (
                     <input type="password" name="password" placeholder="" value={data.password} onChange={ handleInputChange } required/>
                   </div>
       
-                 <button type="Submit" className="btn btn-warning">
-                    Login
+                 <button type="Submit" className="btn btn-warning" disabled={data.loading}>
+                  {data.loading===true && <span>loading...</span>}
+                    {data.loading===false && <span>Login</span>  }
+                  
                   </button>
                 </div>
                 <br />
                 <div>
-                { data.error === 'success' && <Alert alert={data.errorMessage} type="success"/> }
-                 { data.error === 'error' && <Alert alert={data.errorMessage} type="danger"/> }
+                 
                  </div>
               </div>
+              { data.error === 'success' && <Alert alert={data.errorMessage} type="success"/> }
+              { data.error === 'error' && <Alert alert={data.errorMessage} type="danger"/> }
             </form>
           
         
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-4"></div>
+            <div className="col-sm-12 col-md-3 col-lg-3"></div>
           </div>
         </div>
         

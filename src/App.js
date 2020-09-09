@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect}from 'react';
+import React, { useReducer}from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -17,14 +17,14 @@ import Courses from './pages/Courses/Courses'
 import Loginpage from './pages/Loginpage/Loginpage'
 import Registerpage from './pages/Registerpage/Registerpage'
 import { UserContext } from './Context/UserContext';
-
+// import Loader from './components/Loader/Loader'
 import { reducer , initialState } from './Context/authReducer'
 
 export default function App() {
   const [state, dispatch] = useReducer( reducer,initialState )
-  console.log(state)
   return (
     <div className="App">
+      
       <BrowserRouter>  
           <Switch>
               <UserContext.Provider value={{
@@ -32,6 +32,7 @@ export default function App() {
                           dispatch
                         }}
                 >
+                
                 <Route exact path='/' component={Home} />
                 <Route exact path='/aboutus' component={Aboutus} />
                 <Route exact path='/contactus' component={Contact} />
@@ -41,10 +42,10 @@ export default function App() {
                 <Route exact path='/:id/detail' component={Courses} />
                 <Route exact path='/login' component={Loginpage} />
                 <Route exact path='/register' component={Registerpage} />
+                <Route  component={() => "404 Not Found"} />
               </UserContext.Provider>
           </Switch>
       </BrowserRouter>
     </div>
   );
 }
-

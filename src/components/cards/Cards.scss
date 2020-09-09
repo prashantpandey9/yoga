@@ -10,4 +10,51 @@
         object-fit: cover;
         height: 250px;
     }
+    .courseimage{
+	width: 30px !important;
+	height: 30px !important;
+	border-radius: 50%;
+	}
+	.teacher{
+		padding-left: 10px;
+		font-family: 'ubuntu';
+	}
+	.card-title{
+		color: inherit !important;
+		text-align: center;
+	}
+	.price{
+		float: right;
+		color: #6274ff !important;
+		font-weight: bold;
+
+	}
+	.nameplate{
+		margin-top: 20px;
+		max-height: 45px;
+	}
+	.card-text {
+		color: #586f6f;
+		/* max-height: 45px; */
+		min-height: 45px;
+		text-align: center;
+		font-size: 14px;
+	}
+	.btn{
+		display: block!important;
+		text-align: inherit;
+		
+	}
+	.btn:hover{
+		color: inherit!important;
+	}
+
+	
 }
+
+
+.card2.card:hover {
+		color: #6274ff;
+		border-color: #6274ff;
+}
+
