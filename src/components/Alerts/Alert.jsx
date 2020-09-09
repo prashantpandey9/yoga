@@ -8,7 +8,7 @@ export default function Success({alert, type}) {
             try {
                 return Object.entries(alert)[0][1];
             } catch (e) {
-                // console.error(e);
+                console.log(e);
             }
         }
     }

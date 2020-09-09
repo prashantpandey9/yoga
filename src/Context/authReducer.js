@@ -4,25 +4,25 @@ export let initialState = {
   token: null,
   user_id: null,
 };
-const localState = localStorage.getItem("token") || null;
+const localState = localStorage.getItem("token");
 console.log("localState",localState)
-if (localState.length>4){
-   initialState = {
-      isAuthenticated: true,
-      username: localStorage.getItem("username"),
-      token: localStorage.getItem("token"),
-      user_id: localStorage.getItem("user_id"),
-    };
-    console.log("reduces",initialState)
-}
-else {
-  console.log("dfdfgjb",initialState)
-   initialState = {
+if (localState===null){
+  initialState = {
       isAuthenticated: false,
       username: null,
       token: null,
       user_id: null,
     };
+   
+}
+else {
+  initialState = {
+      isAuthenticated: true,
+      username: localStorage.getItem("username"),
+      token: localStorage.getItem("token"),
+      user_id: localStorage.getItem("user_id"),
+    };
+   
 }
 export  const reducer = (state, action) => {
   
@@ -42,7 +42,7 @@ export  const reducer = (state, action) => {
 
     case "LOGOUT":
       localStorage.clear()
-      localStorage.setItem("token", null);
+      // localStorage.setItem("token", null);
 
       return {
         ...state,
@@ -52,15 +52,13 @@ export  const reducer = (state, action) => {
         user_id: null,
       };
     case "REGISTER_SUCCESS":
-      localStorage.setItem("username", action.payload.username);
-      localStorage.setItem("token", action.payload.token);
-      localStorage.setItem("user_id", action.payload.user_id);
       return {
         ...state,
         isAuthenticated: true,
-        username: action.payload.username,
-        token: action.payload.token,
-        user_id: action.payload.user_id
+        username: localStorage.getItem("username"),
+        token: localStorage.getItem("token"),
+        user_id: localStorage.getItem("user_id"),
+
       };
     default:
       return state;
