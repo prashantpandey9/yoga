@@ -3,7 +3,7 @@
 .card2{
     // padding: 0 5px 0 5px;
     border-color: $head;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 20px;
     img{
         
@@ -16,7 +16,7 @@
 	border-radius: 50%;
 	}
 	.teacher{
-		padding-left: 10px;
+		// padding-left: 10px;
 		font-family: 'ubuntu';
 	}
 	.card-title{
@@ -45,9 +45,9 @@
 		text-align: inherit;
 		
 	}
-	.btn:hover{
-		color: inherit!important;
-	}
+	// .btn:hover{
+	// 	color: inherit!important;
+	// }
 
 	
 }

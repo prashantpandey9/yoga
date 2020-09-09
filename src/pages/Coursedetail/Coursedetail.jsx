@@ -1,9 +1,13 @@
 import React from 'react'
-
-export default function Coursedetail() {
+import Footer from '../../components/Footer/Footer'
+import NavBar from '../../components/NavBar/NavBar'
+import Detailedpageforcourse from '../../components/Detailedpageforcourse/Detailedpageforcourse'
+export default function Coursedetail(props) {
 	return (
-		<div>
-			
-		</div>
+		<>
+			<NavBar/>	
+			<Detailedpageforcourse title={props.match.params.title}/>
+			<Footer />
+		</>
 	)
 }

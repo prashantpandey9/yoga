@@ -2,10 +2,15 @@ import React, { useReducer}from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import 'owl.carousel/dist/assets/owl.carousel.css';  
+import 'owl.carousel/dist/assets/owl.theme.default.css';  
+
 import 'jquery/dist/jquery.js';
 import 'popper.js/dist/popper.js'
 import'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+
+
 
 import Home  from './pages/Home/Home';
 import Aboutus from './pages/AboutUs/Aboutus';
@@ -19,6 +24,7 @@ import Registerpage from './pages/Registerpage/Registerpage'
 import { UserContext } from './Context/UserContext';
 // import Loader from './components/Loader/Loader'
 import { reducer , initialState } from './Context/authReducer'
+import Coursedetail from './pages/Coursedetail/Coursedetail'
 
 export default function App() {
   const [state, dispatch] = useReducer( reducer,initialState )
@@ -43,6 +49,7 @@ export default function App() {
                 <Route exact path='/login' component={Loginpage} />
                 <Route exact path='/register' component={Registerpage} />
                 <Route  component={() => "404 Not Found"} />
+                <Route exact path='/course/:title' render={(props) => <Coursedetail {...props} />}/>
               </UserContext.Provider>
           </Switch>
       </BrowserRouter>
